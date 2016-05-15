@@ -96,7 +96,7 @@ GameObject:
   - 212: {fileID: 52657254}
   - 61: {fileID: 52657253}
   m_Layer: 0
-  m_Name: white
+  m_Name: bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,11 +153,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 52657252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -4.27, z: 0}
-  m_LocalScale: {x: 31.29392, y: 2.183646, z: 1}
+  m_LocalPosition: {x: -0.00095865264, y: -4.8680053, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1548257168}
+  m_RootOrder: 1
 --- !u!1 &234932727
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ GameObject:
   - 212: {fileID: 611202667}
   - 61: {fileID: 611202666}
   m_Layer: 0
-  m_Name: white (1)
+  m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,11 +287,95 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 611202665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 6.36, z: 0}
-  m_LocalScale: {x: 31.29392, y: 2.183646, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1548257168}
+  m_RootOrder: 0
+--- !u!1001 &1022474866
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 466676, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 466676, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 466676, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466676, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466676, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466676, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 466676, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 466676, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &1042676686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1042676687}
+  - 114: {fileID: 1042676688}
+  m_Layer: 0
+  m_Name: Bad guy spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1042676687
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042676686}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.96537274, y: 1.0041144, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &1042676688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042676686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4420e7debc9eff74dbed885061323642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDelay: 3
+  maxDelay: 8
+  badguyPrefab: {fileID: 115262, guid: ed3caa1ddc31c38478ecb5734249fae2, type: 2}
 --- !u!1 &1059477385
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +481,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upForce: 2.5
   horizontalForce: 0.05
+--- !u!1 &1548257167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1548257168}
+  m_Layer: 0
+  m_Name: borders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1548257168
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1548257167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.01, y: 6.36, z: 0}
+  m_LocalScale: {x: 31.29392, y: 2.183646, z: 1}
+  m_Children:
+  - {fileID: 611202668}
+  - {fileID: 52657255}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &1559103927
 GameObject:
   m_ObjectHideFlags: 0
