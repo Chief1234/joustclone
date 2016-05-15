@@ -8,17 +8,24 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		if (Input.GetKeyDown(KeyCode.Space)){
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(0, upForce));
+
+		if (Input.GetKeyDown(KeyCode.Mouse0)){
+
+			bool leftSide = (Input.mousePosition.x <= Screen.width / 2);
+
+            Vector2 currentVel = GetComponent<Rigidbody2D>().velocity;
+
+			if (leftSide){
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(0, upForce));
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-1, currentVel.y);
+			}
+			else{
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(0, upForce));
+                GetComponent<Rigidbody2D>().velocity = new Vector2(1, currentVel.y);
+			}
 		}
 
-		if (Input.GetKey(KeyCode.LeftArrow)){
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(-horizontalForce, 0));
-		}
-
-		if (Input.GetKey(KeyCode.RightArrow)){
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(horizontalForce, 0));
-		}
+        // don't let player go beyond screen limits
+        
 	}
 }
