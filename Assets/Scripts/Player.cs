@@ -16,12 +16,14 @@ public class Player : MonoBehaviour {
             Vector2 currentVel = GetComponent<Rigidbody2D>().velocity;
 
 			if (leftSide){
-				GetComponent<Rigidbody2D>().AddForce(new Vector2(0, upForce));
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-1, currentVel.y);
+
+                if (currentVel.x > 0) GetComponent<Rigidbody2D>().velocity = new Vector2(0, currentVel.y);
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(-horizontalForce, upForce));
+                
 			}
 			else{
-				GetComponent<Rigidbody2D>().AddForce(new Vector2(0, upForce));
-                GetComponent<Rigidbody2D>().velocity = new Vector2(1, currentVel.y);
+                if (currentVel.x < 0) GetComponent<Rigidbody2D>().velocity = new Vector2(0, currentVel.y);
+				GetComponent<Rigidbody2D>().AddForce(new Vector2(horizontalForce, upForce));
 			}
 		}
         
