@@ -23,6 +23,7 @@ public class BadGuy : MonoBehaviour {
 
     IEnumerator KillThis()
     {
+        GameController.instance.AddKill();
         yield return new WaitForSeconds(.5f);
         Destroy(gameObject);
     }

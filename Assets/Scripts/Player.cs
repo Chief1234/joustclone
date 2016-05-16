@@ -5,7 +5,9 @@ public class Player : MonoBehaviour {
 
 	public float upForce = 2;
 	public float horizontalForce = 2;
-	
+
+    bool isImmune = false;
+
 	// Update is called once per frame
 	void Update () {
 
@@ -40,39 +42,30 @@ public class Player : MonoBehaviour {
 
     void LoseLife()
     {
-        print("lose life");
+        if (isImmune) return;
 
+        GameController.instance.TakeLife();
         StartCoroutine(LostLifeVisual());
     }
 
     IEnumerator LostLifeVisual()
     {
-        yield return new WaitForSeconds(.2f);
+        isImmune = true;
 
+        yield return new WaitForSeconds(.2f);
         GetComponent<SpriteRenderer>().enabled = false;
-
         yield return new WaitForSeconds(.2f);
-
         GetComponent<SpriteRenderer>().enabled = true;
-
         yield return new WaitForSeconds(.2f);
-
         GetComponent<SpriteRenderer>().enabled = false;
-
         yield return new WaitForSeconds(.2f);
-
         GetComponent<SpriteRenderer>().enabled = true;
-
         yield return new WaitForSeconds(.2f);
-
         GetComponent<SpriteRenderer>().enabled = false;
-
         yield return new WaitForSeconds(.2f);
-
         GetComponent<SpriteRenderer>().enabled = true;
-
         yield return new WaitForSeconds(.2f);
 
-
+        isImmune = false;
     }
 }
