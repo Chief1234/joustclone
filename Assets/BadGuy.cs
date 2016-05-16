@@ -14,4 +14,18 @@ public class BadGuy : MonoBehaviour {
         if (Time.timeSinceLevelLoad > .2f)
             if (!GetComponent<SpriteRenderer>().isVisible) Destroy(gameObject);
 	}
+
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if (c.relativeVelocity.y > 0)
+            StartCoroutine(KillThis());
+
+    }
+
+    IEnumerator KillThis()
+    {
+        yield return new WaitForSeconds(.5f);
+
+        Destroy(gameObject);
+    }
 }
