@@ -19,13 +19,11 @@ public class BadGuy : MonoBehaviour {
     {
         if (c.relativeVelocity.y > 0)
             StartCoroutine(KillThis());
-
     }
 
     IEnumerator KillThis()
     {
         yield return new WaitForSeconds(.5f);
-
         Destroy(gameObject);
     }
 }

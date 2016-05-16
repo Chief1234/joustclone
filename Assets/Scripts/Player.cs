@@ -28,4 +28,51 @@ public class Player : MonoBehaviour {
 		}
         
 	}
+
+    void OnCollisionEnter2D(Collision2D c)
+    {
+        if (c.relativeVelocity.y > 0)
+        {
+            LoseLife();
+        }
+        print(c.relativeVelocity);
+    }
+
+    void LoseLife()
+    {
+        print("lose life");
+
+        StartCoroutine(LostLifeVisual());
+    }
+
+    IEnumerator LostLifeVisual()
+    {
+        yield return new WaitForSeconds(.2f);
+
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        yield return new WaitForSeconds(.2f);
+
+        GetComponent<SpriteRenderer>().enabled = true;
+
+        yield return new WaitForSeconds(.2f);
+
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        yield return new WaitForSeconds(.2f);
+
+        GetComponent<SpriteRenderer>().enabled = true;
+
+        yield return new WaitForSeconds(.2f);
+
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        yield return new WaitForSeconds(.2f);
+
+        GetComponent<SpriteRenderer>().enabled = true;
+
+        yield return new WaitForSeconds(.2f);
+
+
+    }
 }
