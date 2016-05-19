@@ -33,7 +33,7 @@ public class Player : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D c)
     {
-        if (c.relativeVelocity.y > 0)
+        if (c.relativeVelocity.y > 0 && c.collider.gameObject.tag != "NoDamage")
         {
             LoseLife();
         }
